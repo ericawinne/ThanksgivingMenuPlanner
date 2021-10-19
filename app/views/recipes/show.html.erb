@@ -1,0 +1,12 @@
+<h3> Recipes show page ...List name, img?, & ingredients -Make NAME a clickable link to edit or remove recipe</h3>
+
+<h1><%= @recipe.name %></h1>
+  <h2><%= @recipe.instructions %></h2>
+
+    <ul>
+      <% @recipe.ingredients.uniq.each do |ingredient| %>
+        <li><%= ingredient.name %></li>
+      <% end %>
+    </ul>
+
+<%# line 7 link_to , ingredient ...make edit path?, also add instructions%>

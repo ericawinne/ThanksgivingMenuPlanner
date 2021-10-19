@@ -1,0 +1,7 @@
+<h1>Ingredients Shopping List: </h1>
+
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <h2><li><%= ingredient.name %></li></h2>
+  <% end %>
+</ul>
