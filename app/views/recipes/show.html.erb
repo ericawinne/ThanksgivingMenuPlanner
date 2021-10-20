@@ -4,8 +4,9 @@
 </h1>
 
   <h2><%= @recipe.instructions %></h2>
-
+ <h2> ingredients </h2>
     <ul>
+   
       <% @recipe.ingredients.uniq.each do |ingredient| %>
         <li><%= ingredient.name %></li>
       <% end %>
