@@ -1,0 +1,41 @@
+<%= form_for @recipe do |f| %>
+  <%= f.label :name, 'Recipe Name:' %>
+    <%= f.text_field :name %> 
+  <br>
+  <br>
+
+  <div>
+    <%= f.label :image, 'Add a recipe photo:' %>
+      <br>
+    <%= f.file_field :image %>
+      <br>
+      <br>
+  </div>
+
+  <div>
+    <%= f.label :ingredient_ids, 'Select from popular ingredients:' %><br>
+    <%= f.collection_check_boxes :ingredient_ids, @ingredients, :id, :name %>
+  </div>
+    <br>
+
+    <%= f.label :ingredients, 'Add a new ingredient:' %>
+    <br>
+      <%= f.fields_for :ingredients, @recipe.ingredients.build do |ingredients_fields| %>
+        <%= ingredients_fields.text_field :name %>
+      <% end %>
+    <br>
+    <br>
+
+  <div>
+    <%= f.label :instructions, 'Add instruction notes:' %>
+      <br>
+    <%= f.text_field :instructions %>
+      <br>
+      <br>
+  </div>
+
+
+  <%= f.submit %>
+<% end %>
+
+

@@ -1,0 +1,9 @@
+<h1>Edit your <%= @recipe.name %> recipe</h1> 
+<%= render partial: 'form', locals: {recipe: @recipe, ingredients: @ingredients} %>
+<br>
+<br>
+<div>
+    <%= form_tag recipe_path(@recipe.id), method: "delete" do %>
+    <%= submit_tag "Delete #{@recipe.name} recipe" %>
+  <% end %>
+</div>

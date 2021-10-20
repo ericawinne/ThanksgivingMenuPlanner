@@ -1,6 +1,8 @@
-<h3> Recipes show page ...List name, img?, & ingredients -Make NAME a clickable link to edit or remove recipe</h3>
+<h1>
+  <%= @recipe.name %>   
+  <button> <%= link_to "Edit recipe", edit_recipe_path(@recipe) %></button>
+</h1>
 
-<h1><%= @recipe.name %></h1>
   <h2><%= @recipe.instructions %></h2>
 
     <ul>
@@ -9,4 +11,4 @@
       <% end %>
     </ul>
 
-<%# line 7 link_to , ingredient ...make edit path?, also add instructions%>
+<%# add img? , delete, and instructions%>
