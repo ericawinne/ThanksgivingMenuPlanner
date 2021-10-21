@@ -2,9 +2,11 @@
   <%= @recipe.name %>   
   <button> <%= link_to "Edit recipe", edit_recipe_path(@recipe) %></button>
 </h1>
-
-  <h2><%= @recipe.instructions %></h2>
- <h2> ingredients </h2>
+  <br>
+  <h2> Cooking Instructions: </h2>
+  <li><%= @recipe.instructions %></li>
+  <br>
+ <h3> You will need: </h3>
     <ul>
    
       <% @recipe.ingredients.uniq.each do |ingredient| %>

@@ -1,17 +1,28 @@
 <h1>My Thanksgiving Menu</h1>
 
 <% @recipes.each do |recipe| %>
-  <h1>
-      <%= link_to recipe.name, recipe %>
-  </h1>
-  <p>
-    <%= image_tag(recipe.image) if recipe.image.attached? %>
-  </p>
+  <div class="card" style="width: 18rem;">
+    <%= image_tag(recipe.image, class: "img-thumbnail card-img-top", style: 'width: 10rem') if recipe.image.attached? %>
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to recipe.name, recipe %></h5>
+      <p class="card-text">
+        <% if recipe.user_id%>
+          <%= recipe.user.email %> has claimed this recipe
+        <% else %>
+          <%= form_for recipe do |form| %>
+            <%= form.hidden_field :user_id, value: current_user.id %>
+            <%= form.submit "Claim this recipe", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+  </div> <br>
 <% end %>
 
   <h1>
       <button><%= link_to "Add new recipe", new_recipe_path %></button>
   </h1>
+
 
 
 

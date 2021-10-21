@@ -1,0 +1,27 @@
+<h1> this page will show all reciped a user has claimed </h1>
+
+<h1>My Recipes</h1>
+
+<% @recipes_claimed.each do |recipe| %>
+  <h1>
+      <%= link_to recipe.name, recipe %>
+  </h1>
+  <p>
+    <%=  image_tag(recipe.image, class: "img-thumbnail", style: 'width: 10rem') if recipe.image.attached? %>
+  </p>
+  <br>
+      <%= form_for recipe do |form| %>
+      <%= form.hidden_field :user_id, value: nil %>
+      <%= form.submit "Un-claim this recipe" %>
+    <% end %>
+<% end %>
+
+
+
+
+
+  <%# <% if recipe.user_id%>
+    <%# <%= <h1> this page will show all reciped a user has claimed </h1> %>
+  <%# <% else %>
+    <%# <%= <h1> you have not selected any recipes yet. </h1> %>
+    <%# <% end %> 

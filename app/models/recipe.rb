@@ -8,6 +8,3 @@ class Recipe < ApplicationRecord
 
   accepts_nested_attributes_for :ingredients, reject_if: proc { |attributes| attributes['name'].blank? }
 end
-
-# TODO: remove optional belongs to user 
-# after auth
