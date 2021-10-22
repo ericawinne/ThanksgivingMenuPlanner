@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color:rgba(82, 24, 9, 0.644)
+}
+
+
+body {
+  background-color:  rgba(228, 227, 207, 0.986);
+}
+
+div.card.col {
+  background-color: rgba(197, 197, 36, 0.336);
+}
+
+img.img-thumbnail.card-img-top {
+  background-color: rgba(230, 230, 187, 0.932);
+}

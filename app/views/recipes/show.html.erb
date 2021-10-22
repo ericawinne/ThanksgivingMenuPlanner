@@ -8,7 +8,6 @@
   <br>
  <h3> You will need: </h3>
     <ul>
-   
       <% @recipe.ingredients.uniq.each do |ingredient| %>
         <li><%= ingredient.name %></li>
       <% end %>
