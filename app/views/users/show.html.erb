@@ -1,31 +1,19 @@
 <h1>My Recipes</h1>
-
 <div class= "container">
   <div class="row row-cols-4">
     <% @recipes_claimed.each do |recipe| %>
-     <div class="card col" style="width: 18rem; margin: 10px 10px;">
-
-          <%=  image_tag(recipe.image, class: "img-thumbnail card-img-top", style: 'width: 10rem') if recipe.image.attached? %>
-        <div class="card-body">
-          <h2 class="card-title"><%= link_to recipe.name, recipe %></h2>
-       
-        <br>
-          <%= form_for recipe do |form| %>
-          <%= form.hidden_field :user_id, value: nil %>
-          <%= form.submit "Un-claim this recipe" %>
-        <% end %>
-      </div>
+      <div class="card col" style="width: 18rem; margin: 10px 10px;">
+        <%= image_tag(recipe.image, class: "img-thumbnail card-img-top mx-auto d-block", style: 'width: 10rem') if recipe.image.attached? %>
+        <div class="text-center card-body">
+          <h5 class="card-title"><%= link_to recipe.name, recipe %></h5>
+          <p class="card-text">
+            <%= form_for recipe do |form| %>
+            <%= form.hidden_field :user_id, value: nil %>
+            <%= form.submit "Un-claim this recipe" %>
+          <% end %>
+          </p>
+        </div>
+      </div> <br>
     <% end %>
   </div>
- </div>
-
-
-
-
-
-
-  <%# <% if recipe.user_id%>
-    <%# <%= <h1> this page will show all reciped a user has claimed </h1> %>
-  <%# <% else %>
-    <%# <%= <h1> you have not selected any recipes yet. </h1> %>
-    <%# <% end %> 
+</div>

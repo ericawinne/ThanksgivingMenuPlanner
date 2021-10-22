@@ -4,8 +4,8 @@
   <div class="row row-cols-4">
     <% @recipes.each do |recipe| %>
       <div class="card col" style="width: 18rem; margin: 10px 10px;">
-        <%= image_tag(recipe.image, class: "img-thumbnail card-img-top", style: 'width: 10rem') if recipe.image.attached? %>
-        <div class="card-body">
+        <%= image_tag(recipe.image, class: "img-thumbnail card-img-top mx-auto d-block", style: 'width: 10rem') if recipe.image.attached? %>
+        <div class="text-center card-body">
           <h5 class="card-title"><%= link_to recipe.name, recipe %></h5>
           <p class="card-text">
             <% if recipe.user_id%>
@@ -13,7 +13,7 @@
             <% else %>
               <%= form_for recipe do |form| %>
                 <%= form.hidden_field :user_id, value: current_user.id %>
-                <%= form.submit "Claim this recipe", class: "btn btn-primary" %>
+                <%= form.submit "Claim this recipe", class: "btn btn-dark" %>
               <% end %>
             <% end %>
           </p>

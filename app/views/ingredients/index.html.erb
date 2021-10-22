@@ -1,12 +1,18 @@
 <h1>Ingredients Shopping List: </h1>
 
-<ul>
   <% @recipes.each do |recipe| %>
-    <li>
+    <h2>
       <%= recipe.name %> ingredients:
-        <% recipe.ingredients.each do |ingredient| %>
-          <h2><li><%= ingredient.name %></li></h2>
-        <% end %>
+    </h2>
+    <br>
+  <div class="container-fluid">
+    <ul>
+      <% recipe.ingredients.each do |ingredient| %>
+        <h4><li><%= ingredient.name %></li></h4>
       <% end %>
-    </li>
-</ul>
+      <br>
+    </ul>
+  </div>
+
+
+      <% end %>

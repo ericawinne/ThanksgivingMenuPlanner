@@ -14,17 +14,29 @@
  *= require_self
  */
 
+
 h1 {
   text-align: center;
+  margin: 16px;
 }
 
 a {
   color:rgba(82, 24, 9, 0.644)
 }
 
+a:hover {
+  text-decoration: none;
+  color: rgb(196, 97, 97);
+  background-color: rgba(255, 255, 0, 0.301);
+}
+
 
 body {
   background-color:  rgba(228, 227, 207, 0.986);
+}
+
+body { 
+  background-image: image-url('pictureTitle.png'); 
 }
 
 div.card.col {
@@ -33,4 +45,13 @@ div.card.col {
 
 img.img-thumbnail.card-img-top {
   background-color: rgba(230, 230, 187, 0.932);
+}
+
+.Thanksgiving {
+  background-image: url("thanksgiving.jpg");
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
